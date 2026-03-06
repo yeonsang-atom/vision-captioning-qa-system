@@ -76,6 +76,31 @@ invalid_phrases = [
 
 ---  
 
+## Compared Models
+
+### Florence2
+
+Florence2는 Microsoft에서 제안한 Unified Vision-Language Model로,  
+이미지 이해와 텍스트 생성을 하나의 프레임워크로 통합한 모델이다.
+
+- Vision + Language 통합 구조
+- 다양한 Vision Task (Captioning, Detection 등) 지원
+- 비교적 정교하고 문맥을 고려한 문장 생성 능력
+- 멀티모달 표현 학습에 강점
+
+---
+
+### BLIP2
+
+BLIP2는 Vision Encoder와 대규모 Language Model을 연결하는 구조의 모델이다.
+
+- Frozen Vision Encoder + Frozen LLM
+- Q-Former를 통해 시각 정보를 LLM에 전달
+- 객체 중심적이고 명사 기반 설명이 강함
+- 안정적인 기본 캡셔닝 성능
+
+---  
+
 ## Experimental Results  
 | Metric | Florence2 | BLIP2  |
 | ------ | --------- | ------ |
@@ -145,4 +170,23 @@ LLM 응답을 gTTS로 변환하여,
 ---  
 
 ## References  
-- 
+### 1. ComfyUI-Florence2 GitHub Project
+Florence2 모델을 실행하고 적용하는 과정에서 해당 GitHub 코드 구조 및 예제를 참고하였다.  
+해당 프로젝트의 코드 베이스를 활용하여 Hugging Face 기반 Florence2 모델 로딩 및 추론 흐름을 파악하고,  
+이를 본 프로젝트에 맞게 커스터마이징하였다.  
+
+🔗 https://github.com/kijai/ComfyUI-Florence2
+
+---
+
+### 2. Hugging Face `evaluate` Library
+BLEU, ROUGE, METEOR 점수 계산을 위해 Hugging Face에서 제공하는 `evaluate` 라이브러리를 활용하였다.  
+공식 문서 및 예제 코드를 참고하여 신뢰성 있는 평가 파이프라인을 구성하였다.
+
+🔗 https://huggingface.co/docs/evaluate
+
+---
+
+### 3. Google Colab Pro & gTTS
+모델 실행과 QA 시스템 구현은 Google Colab A100 GPU 환경에서 수행하였다.  
+텍스트 응답을 음성으로 변환하기 위해 `gTTS (Google Text-to-Speech)` 라이브러리를 활용하였다.
