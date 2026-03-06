@@ -51,6 +51,10 @@ VizWiz 데이터셋 특징:
 초기 무작위 랜덤 샘플링 방식으로 진행하려고 하였으나,  
 해당 방식이 적합하지 않다고 판단하여 실제 서비스 가능성을 고려한 수동 이미지 선별 전략 사용  
 
+
+### VizWiz Dataset:  
+https://vizwiz.cs.colorado.edu  
+
 ---  
 
 ## Evaluation Stategy  
